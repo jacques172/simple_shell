@@ -1,41 +1,69 @@
-.TH man 1 "28 Nov 2019" "0.1" "simple_shell man page"
+.TH hsh 1 "April 2, 2021" "1.0" "hsh General Commands Manual"
 
 .SH NAME
-.B simple_shell
-- Simple shell made in C to interact with a linux operating system.
+
+.B simple_shell - hsh
+- command line interpreter or shell
+
 
 .SH SYNOPSIS
-./hsh [options] [file]
+
+.B  ./hsh
+
 
 .SH DESCRIPTION
-Simple_Shell is an sh-compatible command language interpreter that executes
-commands read from the standard input.
 
-.SH Return Value
+simple_shell is a command line interpreter. It is a program that executes other programs,
+the user can run different commands or utilities/tools with some input data.
 
-Always 0 for success, other number means failure.
+.SH OVERVIEW
 
-.SH PATH
+simple_shell executes commands that the user puts on the terminal.
 
-It will look inside al directions in PATH env variable for executable.
+.B ls
+- It is used to list information about files and directories within the file system.
+The ls utility is a part of the GNU core utilities which are installed on all Linux distributions.
 
-.SH
+.SH INVOCATION
 
-.SH OPTIONS
-.B simple_shell
-Command options will be typed after the main command followed by a space and a
- '-' symbol.
+Compile simple_shell with the GNU Compiler Collection:
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+This shell works in two modes:
+.TP
+.B Interactive Mode
+.TP
+The shell read the commands from the standard input and executes them.
+.TP
+.B Non-interactive Mode
+.TP
+Reads the commands from a file sent thru a pipe, the commands will be executed.
 
-.SH EXAMPLE
 
-[command] [options]
-$ ls -l
+.SH BUILTINS
 
-.SH SEE ALSO
-.I peerlearning(2), projectbased(2), fullstack(2), Betty(1)
+The following builtin commands are supported:
+
+.IT
+.B env
+- prints the environment variables
+
+.B exit
+- exits the program
+
+Example of builtin command:
+to fill in later
+
 
 .SH BUGS
-Single space required after argument.
+No known bugs.
 
 .SH AUTHOR
-Asinyo Jacques
+
+Asinyo jacques
+
+.SH SEE ALSO
+sh

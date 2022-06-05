@@ -1,1 +1,1 @@
-Simple Shell Project - Alx.
+Readme file for c simple shell project
